@@ -137,7 +137,7 @@
                     </div>
                     <!-- end page title -->
 
-                    @yield('contents', View::make('default'));
+                    @yield('contents', View::make('default'))
 
                 </div> <!-- container-fluid -->
             </div>
