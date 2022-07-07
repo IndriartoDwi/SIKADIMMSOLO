@@ -58,6 +58,7 @@ class HomeController extends Controller
         $request->session()->put('role_id', $role->id);
         $request->session()->put('role_name', $role->name);
         $request->session()->put('multi_role', true);
+
         return redirect()->route('dashboard');
     }
 

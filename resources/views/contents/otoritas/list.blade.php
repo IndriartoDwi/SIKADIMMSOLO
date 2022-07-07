@@ -108,8 +108,6 @@ $plugins = ['datatable', 'swal'];
     </form>
 </div><!-- /.modal -->
 
-<input type="hidden" name="update" value="{{ rbacCheck('manajemen_menu',3) }}">
-<input type="hidden" name="delete" value="{{ rbacCheck('manajemen_menu',4) }}">
 @endsection
 
 @push('scripts')

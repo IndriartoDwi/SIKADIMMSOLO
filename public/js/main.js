@@ -137,10 +137,6 @@ const clearErrorMessage = () => {
 
 window.BASE_URL = getMeta('base_url');
 
-$(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
-
 const asset_url = getMeta('asset_url');
 // const current_route = getMeta('current_url');
 $.ajaxSetup({
@@ -152,3 +148,15 @@ $.ajaxSetup({
 const getAccessStatus = (name) => {
     return (parseInt($("input[name=" + name + "]").val())) ? true : false;
 }
+
+$(() => {
+    $('[data-toggle="tooltip"]').tooltip()
+
+    window.permissions = {};
+    $('.permission_status').each((i, el) => {
+        let name = $(el).attr('name');
+        let val = (parseInt($(el).val()) == 1) ? true : false;
+
+        permissions[name] = val;
+    })
+})

@@ -1,3 +1,6 @@
+@foreach ($permissions as $key => $value)
+<input type="hidden" name="{{$key}}" class="permission_status" data-name="{{$key}}" value="{{$value ? 1 : 0}}">
+@endforeach
 <!-- JAVASCRIPT -->
 <script src="{{ config('app.theme') }}assets/libs/jquery/jquery.min.js?q={{ Str::random(5) }}"></script>
 <script src="{{ config('app.theme') }}assets/libs/bootstrap/js/bootstrap.bundle.min.js?q={{ Str::random(5) }}"></script>

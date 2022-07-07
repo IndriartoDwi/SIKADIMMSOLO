@@ -28,7 +28,8 @@ class MenusController extends Controller
 
                 return 'child';
             })
-            ->editColumn('link', function ($row) {
+            ->addColumn('full_link', function ($row) {
+                if (empty($row->link)) return '-';
                 return url($row->link);
             })
             ->make();

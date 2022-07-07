@@ -1,6 +1,4 @@
 let table;
-const UPDATE = getAccessStatus('update');
-const DELETE = getAccessStatus('delete');
 $(() => {
     $('#form-update-role').on('submit', function (e) {
         e.preventDefault();
@@ -303,13 +301,13 @@ $(() => {
                     html: () => {
                         let arr = [];
 
-                        if (UPDATE) {
+                        if (permissions.update) {
                             arr.push(button_update_role)
                             arr.push(button_reset_password)
                             arr.push(button_edit)
                         }
                         // if (UPDATE) arr.push(button_edit)
-                        if (DELETE) arr.push(button_delete)
+                        if (permissions.delete) arr.push(button_delete)
 
                         return arr;
                     }

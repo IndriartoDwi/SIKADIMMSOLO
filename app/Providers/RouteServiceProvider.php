@@ -46,7 +46,15 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        Route::middleware(['web', 'auth'])->group(function () {
+            $this->mapDashboardRoutes();
+
+            $this->mapUserRoutes();
+
+            $this->mapMenuRoutes();
+
+            $this->mapOtoritasRoutes();
+        });
     }
 
     /**
@@ -76,5 +84,33 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('api')
             ->namespace($this->namespace)
             ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapDashboardRoutes()
+    {
+        Route::prefix('dashboard')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/dashboard.php'));
+    }
+
+    protected function mapUserRoutes()
+    {
+        Route::prefix('users')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/users.php'));
+    }
+
+    protected function mapMenuRoutes()
+    {
+        Route::prefix('manajemen-menu')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/menu.php'));
+    }
+
+    protected function mapOtoritasRoutes()
+    {
+        Route::prefix('otoritas')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/otoritas.php'));
     }
 }

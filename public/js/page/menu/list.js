@@ -1,6 +1,4 @@
 let table;
-const UPDATE = getAccessStatus('update');
-const DELETE = getAccessStatus('delete');
 $(() => {
     $('#table-data').on('click', '.btn-delete', function () {
         let data = table.row($(this).closest('tr')).data();
@@ -224,6 +222,9 @@ $(() => {
             }
         }, {
             data: 'link',
+            render: (data, type, { full_link }) => {
+                return full_link;
+            }
         }, {
             data: 'id',
             render: (data, type, row) => {
@@ -250,10 +251,10 @@ $(() => {
                     html: () => {
                         let arr = [];
 
-                        if (UPDATE) {
+                        if (permissions.update) {
                             arr.push(button_edit)
                         }
-                        if (DELETE) arr.push(button_delete)
+                        if (permissions.delete) arr.push(button_delete)
 
                         return arr;
                     }
