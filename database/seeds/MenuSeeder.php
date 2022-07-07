@@ -40,7 +40,7 @@ class MenuSeeder extends Seeder
             'slug_name' => 'manajemen_menu',
             'menu_order' => 3,
             'link' => 'manajemen-menu',
-            'icon' => 'bx bx-user',
+            'icon' => 'bx bx-food-menu',
             'is_active' => 1,
             'created_at' => Carbon::now(),
         ]);
@@ -50,7 +50,7 @@ class MenuSeeder extends Seeder
             'slug_name' => 'otoritas',
             'menu_order' => 4,
             'link' => 'otoritas',
-            'icon' => 'bx bx-user',
+            'icon' => 'bx bx-check-shield',
             'is_active' => 1,
             'created_at' => Carbon::now(),
         ]);
