@@ -1,6 +1,7 @@
 @foreach ($permissions as $key => $value)
 <input type="hidden" name="{{$key}}" class="permission_status" data-name="{{$key}}" value="{{$value ? 1 : 0}}">
 @endforeach
+
 <!-- JAVASCRIPT -->
 <script src="{{ config('app.theme') }}assets/libs/jquery/jquery.min.js?q={{ Str::random(5) }}"></script>
 <script src="{{ config('app.theme') }}assets/libs/bootstrap/js/bootstrap.bundle.min.js?q={{ Str::random(5) }}"></script>
@@ -57,6 +58,7 @@
     });
 </script>
 @endif
+
 @if (in_array('form_wizard', $plugins))
 <!-- twitter-bootstrap-wizard js -->
 <script
@@ -65,36 +67,44 @@
 
 <script src="{{ config('app.theme') }}assets/libs/twitter-bootstrap-wizard/prettify.js?q={{ Str::random(5) }}"></script>
 @endif
+
 @if (in_array('swal', $plugins))
 <!-- Sweet Alerts js -->
 <script src="{{ config('app.theme') }}assets/libs/sweetalert2/sweetalert2.min.js?q={{ Str::random(5) }}"></script>
 @endif
+
 @if (in_array('apex_chart', $plugins))
 <!-- apexcharts -->
 <script src="{{ config('app.theme') }}assets/libs/apexcharts/apexcharts.min.js?q={{ Str::random(5) }}"></script>
 @endif
+
 @if (in_array('lightbox', $plugins))
 <!-- Magnific Popup-->
 <script src="{{ config('app.theme') }}assets/libs/magnific-popup/jquery.magnific-popup.min.js?q={{ Str::random(5) }}">
 </script>
 @endif
+
 @if (in_array('select2', $plugins))
 <script src="{{ config('app.theme') }}assets/libs/select2/js/select2.min.js?q={{ Str::random(5) }}"></script>
 @endif
+
 @if (in_array('tui_chart', $plugins))
 <!-- tui charts plugins -->
 <script src="{{ config('app.theme') }}assets/libs/tui-chart/tui-chart-all.min.js?q={{ Str::random(5) }}"></script>
 @endif
+
 @if (in_array('leaflet', $plugins))
 <script src="{{ asset('js/plugin/leaflet/leaflet.js') }}"></script>
 <script src="{{ asset('js/plugin/leaflet/leaflet-esri.js') }}"></script>
 <script src="{{ asset('js/plugin/leaflet/leaflet.ajax.js') }}"></script>
 @endif
+
 @if (in_array('datepicker', $plugins))
 <script
     src="{{ config('app.theme') }}assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js?q={{ Str::random(5) }}">
 </script>
 @endif
+
 @if (in_array('chart_js', $plugins))
 <!-- Chart JS -->
 <script src="{{ config('app.theme') }}assets/libs/chart.js/Chart.bundle.min.js?q={{ Str::random(5) }}"></script>
