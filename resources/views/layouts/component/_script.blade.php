@@ -86,9 +86,9 @@
 <script src="{{ config('app.theme') }}assets/libs/tui-chart/tui-chart-all.min.js?q={{ Str::random(5) }}"></script>
 @endif
 @if (in_array('leaflet', $plugins))
-<script src="<?= $this->config->item('front_url') ?>js/leaflet/leaflet.js?q={{ Str::random(5) }}"></script>
-<script src="<?= $this->config->item('front_url') ?>js/leaflet/leaflet-esri.js?q={{ Str::random(5) }}"></script>
-<script src="<?= $this->config->item('front_url') ?>js/leaflet/leaflet.ajax.js?q={{ Str::random(5) }}"></script>
+<script src="{{ asset('js/plugin/leaflet/leaflet.js') }}"></script>
+<script src="{{ asset('js/plugin/leaflet/leaflet-esri.js') }}"></script>
+<script src="{{ asset('js/plugin/leaflet/leaflet.ajax.js') }}"></script>
 @endif
 @if (in_array('datepicker', $plugins))
 <script
