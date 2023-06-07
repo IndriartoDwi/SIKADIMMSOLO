@@ -7,6 +7,7 @@ use App\Model\MenuRole;
 use Closure;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
 class RbacCheck
@@ -20,6 +21,9 @@ class RbacCheck
      */
     public function handle($request, Closure $next, $slug, $action_id = 1)
     {
+        if (empty(Session::get('role_id'))) {
+            return redirect()->route('choose-role');
+        }
         $check = $this->rbacCheck($slug, $action_id);
         if ($check == false)
             abort(403, 'Access Forbidden');
