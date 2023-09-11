@@ -4,9 +4,9 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Pengaduan PPPK Guru</title>
+    <title>Skote</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Pengaduan PPPK Guru" name="description" />
+    <meta content="Skote" name="description" />
     <meta content="alief" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -45,8 +45,8 @@
                                 <a href="">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{ asset('img/logo-kemendikbud.png') }}" alt=""
-                                                height="34" class="rounded-circle">
+                                            <img src="{{ asset('assets/images/logo.svg') }}" alt=""
+                                                class="rounded-circle" height="34">
                                         </span>
                                     </div>
                                 </a>
@@ -63,7 +63,8 @@
                                 @if (session('message'))
                                     <div class="alert alert-danger">{{ session('message') }}</div>
                                 @endif
-                                <form class="form-horizontal" action="{{ route('login') }}" autocomplete="off" method="post">
+                                <form class="form-horizontal" action="{{ route('login') }}" autocomplete="off"
+                                    method="post">
                                     @csrf
 
                                     <div class="form-group">
@@ -116,7 +117,7 @@
                         <p class="mb-0">©
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Pengaduan | PPPK Guru Kemdikbud
+                            </script> Skote
                         </p>
                     </div>
 
