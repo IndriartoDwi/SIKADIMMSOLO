@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Model\Action;
 use App\Model\MenuRole;
+use App\Model\Role;
 use Closure;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
@@ -21,8 +22,9 @@ class RbacCheck
      */
     public function handle($request, Closure $next, $slug, $action_id = 1)
     {
-        if (empty(Session::get('role_id'))) {
-            return redirect()->route('choose-role');
+        $role_id = session('role_id');
+        if (empty($role_id)) {
+            return redirect()->route('check-access');
         }
         $check = $this->rbacCheck($slug, $action_id);
         if ($check == false)
@@ -34,6 +36,14 @@ class RbacCheck
             $permissions[$action->name] = $this->rbacCheck($slug, $action->id);
         }
         View::share('permissions', $permissions);
+
+        $roles = Role::all();
+        $role_id = session('role_id');
+        $access_roles = [];
+        foreach ($roles as $role) {
+            $access_roles[$role->slug_name] = $role->id == $role_id ? true : false;
+        }
+        View::share('access_roles', $access_roles);
         return $next($request);
     }
 

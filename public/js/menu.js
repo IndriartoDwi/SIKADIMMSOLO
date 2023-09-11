@@ -1,7 +1,8 @@
 $(() => {
     loadMenu();
 })
-const loadMenu = () => {
+const loadMenu = async () => {
+    await new Promise(resolve => setTimeout(resolve, 160)); //beri delay 0,16 detik agar tidak error unauthorized
     $.get(BASE_URL + 'menus').done(({ data }) => {
         let container = $('#side-menu');
         container.empty();
@@ -16,9 +17,17 @@ const loadMenu = () => {
 }
 
 const generateMenu = (data, container, is_parent = true) => {
-    for (const menu of data) {
-        let { id, name, link: route, icon, child, encode_id } = menu;
 
+    // get the base URL
+    var baseURL = window.location.protocol + "//" + window.location.host;
+    // remove any parameters
+    var cleanURL = baseURL + window.location.pathname;
+
+    const MENU_OPEN = cleanURL.split(BASE_URL)[1];
+
+    for (const menu of data) {
+
+        let { id, name, link: route, icon, child, encode_id } = menu;
         if (is_parent) {
             if (child.length > 0) {
                 let label = $('<span>', {
@@ -37,16 +46,16 @@ const generateMenu = (data, container, is_parent = true) => {
                 });
 
                 let sub = $('<ul>', {
-                    class: 'sub-menu sub-' + id,
+                    class: 'sub-menu sub-' + encode_id,
                     'aria-expanded': false,
                 });
 
                 container.append($('<li>', {
-                    // class: MENU_OPEN == name ? 'mm-active' : '',
+                    // class: route.includes(MENU_OPEN) ? 'mm-active' : '',
                     html: [a, sub],
                 }).prop('outerHTML'));
 
-                generateMenu(child, $('.sub-' + id), false);
+                generateMenu(child, $('.sub-' + encode_id), false);
             } else {
                 let label = $('<span>', {
                     text: name,
@@ -63,13 +72,13 @@ const generateMenu = (data, container, is_parent = true) => {
                 });
 
                 container.append($('<li>', {
-                    // class: MENU_ACTIVE == name ? 'mm-active' : '',
+                    class: route == MENU_OPEN ? 'mm-active' : '',
                     html: [a],
                 }).prop('outerHTML'));
             }
         } else {
             let li = $('<li>', {
-                // class: MENU_ACTIVE == name ? 'mm-active' : '',
+                class: route == MENU_OPEN ? 'mm-active' : '',
                 html: $('<a>', {
                     href: BASE_URL + route,
                     text: name

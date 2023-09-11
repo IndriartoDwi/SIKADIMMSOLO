@@ -36,21 +36,21 @@
                 <div class="d-flex">
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
-                        <a href="index.html" class="logo logo-dark">
+                        <a href="" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="{{ config('app.theme') }}assets/images/logo.svg" alt="" height="22">
+                                <img src="{{ asset('img/logo-kemendikbud.png') }}" alt="" height="31">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ config('app.theme') }}assets/images/logo-dark.png" alt="" height="17">
+                                <img src="{{ asset('img/logo-kemendikbud.png') }}" alt="" height="62">
                             </span>
                         </a>
 
-                        <a href="index.html" class="logo logo-light">
+                        <a href="" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="{{ config('app.theme') }}assets/images/logo-light.svg" alt="" height="22">
+                                <img src="{{ asset('img/logo-kemendikbud.png') }}" alt="" height="31">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ config('app.theme') }}assets/images/logo-light.png" alt="" height="19">
+                                <img src="{{ asset('img/logo-kemendikbud.png') }}" alt="" height="62">
                             </span>
                         </a>
                     </div>

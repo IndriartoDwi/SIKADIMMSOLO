@@ -16,7 +16,7 @@ $plugins = ['swal'];
                     <div class="form-group">
                         <label for="role_name">Nama Otoritas</label>
                         <input type="text" name="role_name" id="role_name" class="form-control"
-                            value="{{ Str::ucfirst($role->name) }}" readonly>
+                            value="{{ Str::title($role->name) }}" readonly>
                     </div>
                     <div class="row">
                         @foreach ($menus as $menu)
@@ -47,11 +47,11 @@ $plugins = ['swal'];
                                         <input type="checkbox" value="1" class="custom-control-input"
                                             id="{{ $menu->id.'_'.$role->id.'_'.$first_action->id }}"
                                             name="{{ $menu->id.'_'.$role->id.'_'.$first_action->id }}" {{
-                                            in_array($action->id,
+                                            in_array($first_action->id,
                                         $menu->actions) ? 'checked' : '' }}>
                                         <label class="custom-control-label"
                                             for="{{ $menu->id.'_'.$role->id.'_'.$first_action->id }}">{{
-                                            $first_action->name
+                                            Str::ucfirst($first_action->name)
                                             }}</label>
                                     </div>
                                 </div>
