@@ -54,6 +54,18 @@ class RouteServiceProvider extends ServiceProvider
             $this->mapMenuRoutes();
 
             $this->mapOtoritasRoutes();
+
+            $this->mapDokumenRoutes();
+
+            $this->mapKaderRoutes();
+
+            $this->mapKampusRoutes();
+
+            $this->mapCabangRoutes();
+
+            $this->mapKomisariatRoutes();
+
+            $this->mapTimelineRoutes();
         });
     }
 
@@ -112,5 +124,47 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix('otoritas')
             ->namespace($this->namespace)
             ->group(base_path('routes/panel/otoritas.php'));
+    }
+
+    protected function mapDokumenRoutes()
+    {
+        Route::prefix('dokumen')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/dokumen.php'));
+    }
+
+    protected function mapKaderRoutes()
+    {
+        Route::prefix('kader')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/kader.php'));
+    }
+
+    protected function mapKampusRoutes()
+    {
+        Route::prefix('kampus')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/referensi/kampus.php'));
+    }
+
+    protected function mapCabangRoutes()
+    {
+        Route::prefix('cabang')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/referensi/cabang.php'));
+    }
+
+    protected function mapKomisariatRoutes()
+    {
+        Route::prefix('komisariat')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/referensi/komisariat.php'));
+    }
+
+    protected function mapTimelineRoutes()
+    {
+        Route::prefix('timeline')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/timeline.php'));
     }
 }

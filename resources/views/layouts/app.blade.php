@@ -38,19 +38,19 @@
                     <div class="navbar-brand-box">
                         <a href="index.html" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="{{ config('app.theme') }}assets/images/logo.svg" alt="" height="22">
+                                <img src="{{ config('app.theme') }}assets1\images\logo\IMM.png" alt="" height="30">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ config('app.theme') }}assets/images/logo-dark.png" alt="" height="17">
+                                <img src="{{ config('app.theme') }}assets1\images\logo\immLong.png" alt="" height="17">
                             </span>
                         </a>
 
                         <a href="index.html" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="{{ config('app.theme') }}assets/images/logo-light.svg" alt="" height="22">
+                                <img src="{{ config('app.theme') }}assets1\images\logo\IMM.png" alt="" height="30">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ config('app.theme') }}assets/images/logo-light.png" alt="" height="19">
+                                <img src="{{ config('app.theme') }}assets1\images\logo\immLong.png" alt="" height="50">
                             </span>
                         </a>
                     </div>
@@ -152,11 +152,11 @@
                         <div class="col-sm-6">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Skote.
+                            </script> © Sistem Informasi Perkaderan.
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-right d-none d-sm-block">
-                                Design & Develop by Themesbrand
+                                PC IMM KOTA SURAKARTA
                             </div>
                         </div>
                     </div>
