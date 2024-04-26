@@ -206,10 +206,10 @@ $plugins = ['datatable', 'swal', 'select2'];
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label for="universitas">Perguruan Tinggi</label>
-                                <select class="form-control" name="universitas" id="universitas">
+                                <select class="form-control" name="universitas" id="universitas" onchange="get_fakultas(this)">
                                     <option value="" selected>--- Pilih Perguruan Tinggi ---</option>
                                     @foreach ($kampus as $dt )
-                                        <option value="{{$dt->kampus}}">{{$dt->kampus}}</option>
+                                        <option value="{{$dt->id}}">{{$dt->kampus}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -218,7 +218,7 @@ $plugins = ['datatable', 'swal', 'select2'];
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label for="fakultas">Fakultas</label>
-                                <select class="form-control select2" name="fakultas" id="fakultas">
+                                <select class="form-control select2" name="fakultas" id="fakultas" onchange="get_prodi(this)">
                                     <option value="" selected>--- Pilih Fakultas ---</option>
                                     @foreach ($fakultas as $dt )
                                         <option value="{{$dt->fakultas}}">{{$dt->fakultas}}</option>

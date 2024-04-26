@@ -501,8 +501,6 @@ class KaderController extends Controller
             'komisariat' => $komisariat,
         ];
 
-        // return $list;
-
         return view('contents.kader.edit', $list);
     }
 
@@ -547,5 +545,31 @@ class KaderController extends Controller
             return response()->json(['status' => false, 'msg' => $e->getMessage()], 400);
         }
     }
+
+    public function get_fakultas(Request $request)
+    {
+        $fakultas = Fakultas::where('kampus_id', $request->id)->get();
+        // return $fakultas;
+        $option = '<option value="">-- Pilih Fakultas --</option>';
+        foreach ($fakultas as $value) {
+            $option .= '<option data-kampus="' . $value->kampus_id . '" value="' . $value->kampus_id . '">' . $value->fakultas . '</option>';
+        }
+
+        echo json_encode($option);
+    }
+
+    public function get_prodi(Request $request)
+    {
+        $fakultas = $request->input('fakultas');
+
+        $prodi = Prodi::where('fakultas_id', $fakultas)->get();
+        $option = '<option value="">-- Pilih Program Studi --</option>';
+        foreach ($prodi as $value) {
+            $option .= '<option data-fakultas="' . $value->fakultas_id . '" data-kampus="' . $value->kampus_id . '"value="' . $value->id . '">' . $value->prodi . '</option>';
+        }
+
+        echo json_encode($option);
+    }
+
 
 }

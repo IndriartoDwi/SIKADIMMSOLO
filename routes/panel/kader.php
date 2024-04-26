@@ -6,3 +6,6 @@ Route::delete('/delete', 'KaderController@delete')->name('kader.delete')->middle
 
 Route::get('/show_edit_form', 'KaderController@show_edit_form')->name('kader.show_edit_form')->middleware('rbac:kader,3');
 Route::delete('/delete-repeater', 'KaderController@delete_repeater')->name('kader.repeater')->middleware('rbac:kader,4');
+
+Route::get('/get-fakultas', 'KaderController@get_fakultas')->name('kader.fakultas')->middleware('rbac:kader');
+Route::get('/get-prodi', 'KaderController@get_prodi')->name('kader.prodi')->middleware('rbac:kader');

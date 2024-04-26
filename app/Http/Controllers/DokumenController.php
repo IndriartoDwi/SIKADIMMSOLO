@@ -27,7 +27,12 @@ class DokumenController extends Controller
 
     public function data(Request $request)
     {
-        $list = Dokumen::select(DB::raw('id, nama_dokumen, dokumen, is_active, created_at'));
+        $role_id = session('role_id');
+        if ($role_id == 2) {
+            $list = Dokumen::select(DB::raw('id, nama_dokumen, dokumen, is_active, created_at'));
+        } else {
+            $list = Dokumen::select(DB::raw('id, nama_dokumen, dokumen, is_active, created_at'))->where('is_active',1);
+        }
 
         return DataTables::of($list)
             ->addIndexColumn()

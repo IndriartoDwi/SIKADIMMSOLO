@@ -65,6 +65,10 @@ class RouteServiceProvider extends ServiceProvider
 
             $this->mapKomisariatRoutes();
 
+            $this->mapFakultasRoutes();
+
+            $this->mapProdiRoutes();
+
             $this->mapTimelineRoutes();
         });
     }
@@ -166,5 +170,19 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix('timeline')
             ->namespace($this->namespace)
             ->group(base_path('routes/panel/timeline.php'));
+    }
+
+    protected function mapFakultasRoutes()
+    {
+        Route::prefix('fakultas')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/referensi/fakultas.php'));
+    }
+
+    protected function mapProdiRoutes()
+    {
+        Route::prefix('program-studi')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/panel/referensi/prodi.php'));
     }
 }

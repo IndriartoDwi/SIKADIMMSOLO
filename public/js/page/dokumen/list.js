@@ -1,5 +1,23 @@
 let table;
 $(() => {
+    $('#table-data').on('change', '.switch-active', function () {
+        var id = $(this).data('id');
+        var value = $(this).val();
+
+        $.post(BASE_URL + 'dokumen/switch', {
+            id,
+            value,
+            _method: 'PATCH'
+        }).done((res) => {
+            showSuccessToastr('sukses', value == '1' ? 'Dokumen berhasil diaktifkan' : 'Dokumen berhasil dinonaktifkan');
+            table.ajax.reload();
+        }).fail((res) => {
+            let { status, responseJSON } = res;
+            showErrorToastr('oops', responseJSON.message);
+            console.log(res);
+        })
+    })
+
     $('#table-data').on('click', '.btn-delete', function () {
         let data = table.row($(this).closest('tr')).data();
 

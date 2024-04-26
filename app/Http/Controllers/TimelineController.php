@@ -152,16 +152,15 @@ class TimelineController extends Controller
 
     public function verifikasiTimeline(Request $request)
     {
-        // return $request;
         try {
             $data = Timeline::find($request->id);
 
             $data->is_verif = $request->is_verif;
 
-            if( $request->catatan = " "){
-                $data->catatan = "Agenda sudah tervalidasi";
-            }else{
+            if( $request->catatan != null){
                 $data->catatan = $request->catatan;
+            }else{
+                $data->catatan = "Agenda sudah tervalidasi";
             }
 
             if ($data->isDirty()) {

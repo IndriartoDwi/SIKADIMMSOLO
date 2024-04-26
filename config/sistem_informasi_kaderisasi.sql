@@ -11,7 +11,7 @@
  Target Server Version : 100421
  File Encoding         : 65001
 
- Date: 07/04/2024 10:31:44
+ Date: 14/04/2024 13:07:01
 */
 
 SET NAMES utf8mb4;
@@ -95,6 +95,62 @@ CREATE TABLE `failed_jobs`  (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for fakultas
+-- ----------------------------
+DROP TABLE IF EXISTS `fakultas`;
+CREATE TABLE `fakultas`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fakultas` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of fakultas
+-- ----------------------------
+INSERT INTO `fakultas` VALUES (1, 'Fakultas Ekonomi dan Bisnis', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (2, 'Fakultas Hukum', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (3, 'Fakultas Ilmu Budaya', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (4, 'Fakultas Kedokteran', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (5, 'Fakultas Keguruan dan Ilmu Pendidikan', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (6, 'Fakultas Pertanian', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (7, 'Fakultas Seni Rupa dan Desain', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (8, 'Fakultas Teknik', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (9, 'Fakultas Matematika dan Ilmu Pengetahuan Alam', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (10, 'Fakultas Ilmu Sosial dan Ilmu Politik', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (11, 'Pascasarjana', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (12, 'Fakultas Agama Islam ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (13, 'Fakultas Ekonomi dan Bisnis ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (14, 'Fakultas Farmasi ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (15, 'Fakultas Geografi ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (16, 'Fakultas Hukum ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (17, 'Fakultas Ilmu Kesehatan ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (18, 'Fakultas Kedokteran ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (19, 'Fakultas Kedokteran Gigi ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (20, 'Fakultas Komunikasi dan Informatika ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (21, 'Fakultas Keguruan dan Ilmu Pendidikan ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (22, 'Fakultas Psikologi ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (23, 'Fakultas Teknik ', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (24, 'Fakultas Ushuluddin dan Dakwah', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (25, 'Fakultas Syariah', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (26, 'Fakultas Ilmu Tarbiyah', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (27, 'Fakultas Ekonomi dan Bisnis Islam', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (28, 'Fakultas Adab dan Bahasa', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (29, 'Fakultas Ilmu Kesehatan', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (30, 'Fakultas Teknologi dan Sains', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (31, 'Fakultas Bisnis dan Ekonomi', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (32, 'Fakultas Sains dan Teknologi', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (33, 'Jurusan Keperawatan', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (34, 'Jurusan Kebidanan', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (35, 'Jurusan Terapi', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (36, 'Jurusan Ortotik Prostetik (Ahli Kaki Palsu)', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (37, 'Jurusan Akupunktur', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (38, 'Jurusan Terapi Wicara', NULL, NULL, NULL);
+INSERT INTO `fakultas` VALUES (39, 'Jurusan Jamu', NULL, NULL, NULL);
+
+-- ----------------------------
 -- Table structure for kader
 -- ----------------------------
 DROP TABLE IF EXISTS `kader`;
@@ -127,9 +183,9 @@ CREATE TABLE `kader`  (
 -- ----------------------------
 -- Records of kader
 -- ----------------------------
-INSERT INTO `kader` VALUES (72, 'Sutopo Seno', '0853359661000', '123132W@gmail.om', 'Sutopo_Seno', 'Pria', 'Islam', 'WNA', 'Menikah', 'Boyolali', '2024-04-18', 'Domisili Domisili Domisili DomisiliDomisili Domisili Domisili DomisiliDomisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili DomisiliDomisi', '/foto/1712099657_IMM.png', 'Kota Surakarta', 'PK IMM AVICENNA F.FARM UMS', 'Universitas Muhammadiyah Surakarta', 'Fakultas 1', 'Program Studi 1', '2024-04-03 06:14:17', '2024-04-05 12:52:29', NULL, NULL);
-INSERT INTO `kader` VALUES (73, 'Sutopo !@#1', '123123123', 'qqwe@gmail.com', 'asdasdasd', 'Pria', 'Kristen Protestan', 'WNI', 'Menikah', 'Boyolasdl', '2024-04-27', 'Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili', '/foto/1712459573_WhatsApp Image 2024-03-29 at 4.31.06 AM.jpeg', 'Kota Surakarta', 'PK IMM AVICENNA F.FARM UMS', 'Universitas Muhammadiyah Surakarta', 'Fakultas 1', 'Program Studi 2', '2024-04-07 10:12:53', '2024-04-07 10:14:28', '2024-04-07 10:14:28', 13);
-INSERT INTO `kader` VALUES (74, 'Sutopo !@#1', '123123123', 'qqwe@gmail.com', 'asdasdasd', 'Pria', 'Kristen Protestan', 'WNI', 'Menikah', 'Boyolasdl', '2024-04-27', 'Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili', '/foto/1712459583_WhatsApp Image 2024-03-29 at 4.31.06 AM.jpeg', 'Kota Surakarta', 'PK IMM AVICENNA F.FARM UMS', 'Universitas Muhammadiyah Surakarta', 'Fakultas 1', 'Program Studi 2', '2024-04-07 10:13:03', '2024-04-07 10:13:03', NULL, 13);
+INSERT INTO `kader` VALUES (72, 'Sutopo Seno', '0853359661000', '123132W@gmail.om', 'Sutopo_Seno', 'Pria', 'Islam', 'WNA', 'Menikah', 'Boyolali', '2024-04-18', 'Domisili Domisili Domisili DomisiliDomisili Domisili Domisili DomisiliDomisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili DomisiliDomisi', '/foto/1712099657_IMM.png', 'PC IMM KOTA SURAKARTA', 'PK IMM FIK UMS', 'Universitas Sebelas Maret', 'Fakultas Hukum', 'Ilmu Hukum', '2024-04-03 06:14:17', '2024-04-09 08:46:18', NULL, 1);
+INSERT INTO `kader` VALUES (73, 'Sutopo !@#1', '123123123', 'qqwe@gmail.com', 'asdasdasd', 'Pria', 'Kristen Protestan', 'WNI', 'Menikah', 'Boyolasdl', '2024-04-27', 'Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili', '/foto/1712459573_WhatsApp Image 2024-03-29 at 4.31.06 AM.jpeg', 'PC IMM KOTA SURAKARTA', 'PK IMM AVICENNA F.FARM UMS', 'Universitas Muhammadiyah Surakarta', 'Fakultas 1', 'Program Studi 2', '2024-04-07 10:12:53', '2024-04-07 10:14:28', '2024-04-07 10:14:28', 13);
+INSERT INTO `kader` VALUES (74, 'Sutopo !@#1', '123123123', 'qqwe@gmail.com', 'asdasdasd', 'Wanita', 'Kristen Protestan', 'WNI', 'Menikah', 'Boyolasdl', '2024-04-27', 'Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili  Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili Domisili', '/foto/1712459583_WhatsApp Image 2024-03-29 at 4.31.06 AM.jpeg', 'PC IMM KOTA SURAKARTA', 'PK IMM AVICENNA F.FARM UMS', 'Universitas Muhammadiyah Surakarta', 'Fakultas 1', 'Program Studi 2', '2024-04-07 10:13:03', '2024-04-07 10:13:03', NULL, 13);
 
 -- ----------------------------
 -- Table structure for kampus
@@ -406,6 +462,149 @@ CREATE TABLE `password_resets`  (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for prodi
+-- ----------------------------
+DROP TABLE IF EXISTS `prodi`;
+CREATE TABLE `prodi`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `prodi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 127 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of prodi
+-- ----------------------------
+INSERT INTO `prodi` VALUES (1, 'Manajemen', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (2, 'Ilmu Ekonomi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (3, 'Ilmu Hukum', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (4, 'Sastra & Bahasa Asing', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (5, 'Sastra Inggris', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (6, 'Sastra & Bahasa Daerah', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (7, 'Sastra Arab', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (8, 'Sastra Indonesia', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (9, 'Pendidikan Dokter', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (10, 'Pendidikan Guru Sekolah Dasar', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (11, 'Keguruan & Pendidikan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (12, 'Pendidikan Bahasa Indonesia', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (13, 'Pendidikan Bahasa Inggris', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (14, 'Agroteknologi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (15, 'Agribisnis', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (16, 'Ilmu dan Teknologi Pangan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (17, 'Kehutanan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (18, 'Desain', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (19, 'Perencanaan Wilayah dan Kota', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (20, 'Ilmu Teknik', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (21, 'Teknik Elektro', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (22, 'Teknik Industri', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (23, 'Teknik Mesin', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (24, 'Teknik Kimia', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (25, 'Arsitektur', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (26, 'Kimia', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (27, 'Matematika', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (28, 'Fisika', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (29, 'Biologi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (30, 'Statistika', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (31, 'Farmasi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (32, 'Teknik Lingkungan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (33, 'Ilmu Komunikasi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (34, 'Hubungan Internasional', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (35, 'Ilmu Administrasi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (36, 'Pendidikan Olahraga', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (37, 'Kesehatan Masyarakat', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (38, 'Gizi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (39, 'Sosiologi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (40, 'Teknik Sipil', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (41, 'Penyuluhan dan Komunikasi Pertanian', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (42, 'Seni Rupa', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (43, 'Hukum Ekonomi Syari\'ah', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (44, 'Ilmu Al-Quran dan Tafsir', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (45, 'Pendidikan Agama Islam', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (46, 'Akuntansi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (47, 'Ekonomi Pembangunan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (48, 'Geografi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (49, 'Fisioterapi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (50, 'Ilmu Gizi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (51, 'Keperawatan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (52, 'Kedokteran', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (53, 'Pendidikan Dokter Gigi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (54, 'Teknik Informatika', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (55, 'PendIdikan Akuntansi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (56, 'Pendidikan Bahasa dan Sastra Indonesia', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (57, 'Pendidikan Biologi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (58, 'Pendidikan Geografi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (59, 'Pendidikan Guru Pendidikan Anak Usia Dini', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (60, 'Pendidikan Matematika', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (61, 'Pendidikan Teknik Informatika', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (62, 'Pendidikan Pancasila dan Kewarganegaraan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (63, 'Psikologi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (64, 'Ilmu Al-Qur\'an dan Tafsir (IAT)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (65, 'Aqidah dan Filsafat Islam (AFI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (66, 'Tasawuf dan Psikoterapi (TP)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (67, 'Bimbingan Konseling Islam (BKI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (68, 'Komunikasi dan Penyiaran Islam (KPI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (69, 'Manajemen Dakwah (MD)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (70, 'Psikologi Islam (PI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (71, 'Pemikiran Politik Islam (PPI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (72, 'Hukum Keluarga Islam (HKI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (73, 'Hukum Ekonomi Syariah (HES)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (74, 'Hukum Pidana Islam (HPI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (75, 'Manajemen Zakat dan Wakaf (MAZAWA)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (76, 'Pendidikan Bahasa Arab (PBA)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (77, 'Pendidikan Agama Islam (PAI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (78, 'Pendidikan Islam Anak Usia Dini (PIAUD)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (79, 'Pendidikan Madrasah Ibtidaiyah (PGMI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (80, 'Pendidikan Profesi Guru (PPG)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (81, 'Manajemen Pendidikan Islam (MPI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (82, 'Tadris Matematika', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (83, 'Teknologi Pangan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (84, 'Ilmu Lingkungan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (85, 'Bioteknologi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (86, 'Sains Data', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (87, 'Manajemen dan Bisnis Syariah (MBS)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (88, 'Akuntansi Syariah (AKS)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (89, 'Perbankan Syariah (PBS)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (90, 'Ekonomi Syariah', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (91, 'Tadris Bahasa Indonesia (TBI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (92, 'Sastra Inggris (SI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (93, 'Bahasa dan Sastra Arab (BSA)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (94, 'Sejarah Peradaban Islam (SPI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (95, 'Pendidikan Bahasa Inggris (PBI)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (96, 'Ilmu Perpustakaan dan Informasi Islam', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (97, 'Manajemen Keuangan dan Perbankan Syariah (MKPS)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (98, 'Ilmu Qur\'an dan Tafsir (IQT)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (99, 'Pendidikan Bahasa Arab', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (100, 'Kebidanan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (101, 'Ilmu Keperawatan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (102, 'Administrasi Rumah Sakit', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (103, 'Pendidikan Profesi Ners', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (104, 'Pendidikan Profesi Bidan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (105, 'Kewirausahaan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (106, 'Manajemen Retail', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (107, 'Sistem dan Teknologi Informasi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (108, 'Akupunktur', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (109, 'Analisis Farmasi dan Makanan', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (110, 'Jamu (Kampus Klaten)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (111, 'Kebidanan (Kampus Klaten)', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (112, 'Okupasi Terapi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (113, 'Ortotik dan Prostetik', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (114, 'Terapi Wicara', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (115, 'Akupunktur dan Pengobatan Herbal', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (116, 'Terapi Okupasi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (117, 'Terapi Wicara dan Bahasa', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (118, 'Pendidikan Profesi Fisioterapi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (119, 'Ilmu Administrasi Negara', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (120, 'Ilmu Hubungan Internasional', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (121, 'Bimbingan dan Konseling', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (122, 'Pendidikan Teknologi Informasi', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (123, 'Teknologi Hasil Pertanian', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (124, 'Magister Administrasi Publik', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (125, 'Magister Ilmu Hukum', NULL, NULL, NULL);
+INSERT INTO `prodi` VALUES (126, 'Magister Manajemen', NULL, NULL, NULL);
+
+-- ----------------------------
 -- Table structure for ref_pendidikan_terakhir
 -- ----------------------------
 DROP TABLE IF EXISTS `ref_pendidikan_terakhir`;
@@ -532,8 +731,8 @@ INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (101, 72, 'Olengg 2', 'Ke
 INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (102, 72, 'Olengg 2', 'Ketum 3', '2024-04-18', '2024-04-27', '2024-04-05 10:08:13', '2024-04-05 12:33:41', '2024-04-05 12:33:41');
 INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (103, 72, '123', '123', '2024-04-18', '2024-04-27', '2024-04-05 10:09:54', '2024-04-05 12:33:40', '2024-04-05 12:33:40');
 INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (106, 72, 'Tempat', 'Posisi/Jabatan 1212', '2024-04-25', '2024-04-25', '2024-04-05 12:34:50', '2024-04-05 12:35:00', '2024-04-05 12:35:00');
-INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (107, 72, 'Tempat Tempat Posisi/Jabatan', 'Posisi/Jabatan Posisi Mulai', '2024-04-25', '2024-04-25', '2024-04-05 12:35:16', '2024-04-05 12:35:16', NULL);
-INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (108, 72, 'Tempat 112313', 'Tempat 112313 Posisi/Jabatan 1231231321', '2024-04-20', '2024-04-11', '2024-04-05 12:45:14', '2024-04-05 12:45:14', NULL);
+INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (107, 72, 'Tempat Tempat Posisi/Jabatan', 'Posisi/Jabatan Posisi Mulai', '2024-04-18', '2024-04-27', '2024-04-05 12:35:16', '2024-04-07 21:39:50', NULL);
+INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (108, 72, 'Tempat 112313', 'Tempat 112313 Posisi/Jabatan 1231231321', '2024-04-25', '2024-04-25', '2024-04-05 12:45:14', '2024-04-07 21:39:50', NULL);
 INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (109, 73, '123123', '1231231', '2024-04-18', '2024-05-07', '2024-04-07 10:12:53', '2024-04-07 10:12:53', NULL);
 INSERT INTO `ref_pengalaman_organisasi_lainnya` VALUES (110, 74, '123123', '1231231', '2024-04-18', '2024-05-07', '2024-04-07 10:13:03', '2024-04-07 10:13:03', NULL);
 
@@ -555,29 +754,8 @@ CREATE TABLE `ref_perkaderan`  (
 -- ----------------------------
 -- Records of ref_perkaderan
 -- ----------------------------
-INSERT INTO `ref_perkaderan` VALUES (1, 68, 'DAD', '2023', '2024-04-03 06:06:14', '2024-04-03 06:06:14', NULL);
-INSERT INTO `ref_perkaderan` VALUES (2, 68, 'DAM', '2025', '2024-04-03 06:06:14', '2024-04-03 06:06:14', NULL);
-INSERT INTO `ref_perkaderan` VALUES (3, 68, 'DAP', '2027', '2024-04-03 06:06:14', '2024-04-03 06:06:14', NULL);
-INSERT INTO `ref_perkaderan` VALUES (4, 69, 'DAD', '2023', '2024-04-03 06:13:00', '2024-04-03 06:13:00', NULL);
-INSERT INTO `ref_perkaderan` VALUES (5, 69, 'DAM', '2025', '2024-04-03 06:13:00', '2024-04-03 06:13:00', NULL);
-INSERT INTO `ref_perkaderan` VALUES (6, 69, 'DAP', '2027', '2024-04-03 06:13:00', '2024-04-03 06:13:00', NULL);
-INSERT INTO `ref_perkaderan` VALUES (7, 70, 'DAD', '2023', '2024-04-03 06:13:21', '2024-04-03 06:13:21', NULL);
-INSERT INTO `ref_perkaderan` VALUES (8, 70, 'DAM', '2025', '2024-04-03 06:13:21', '2024-04-03 06:13:21', NULL);
-INSERT INTO `ref_perkaderan` VALUES (9, 70, 'DAP', '2027', '2024-04-03 06:13:21', '2024-04-03 06:13:21', NULL);
-INSERT INTO `ref_perkaderan` VALUES (10, 71, 'DAD', '2023', '2024-04-03 06:13:41', '2024-04-03 06:13:41', NULL);
-INSERT INTO `ref_perkaderan` VALUES (11, 71, 'DAM', '2025', '2024-04-03 06:13:41', '2024-04-03 06:13:41', NULL);
-INSERT INTO `ref_perkaderan` VALUES (12, 71, 'DAP', '2027', '2024-04-03 06:13:41', '2024-04-03 06:13:41', NULL);
-INSERT INTO `ref_perkaderan` VALUES (13, 72, 'DAP', '2027', '2024-04-03 06:14:17', '2024-04-05 12:49:23', '2024-04-05 12:49:23');
 INSERT INTO `ref_perkaderan` VALUES (14, 72, 'DAM', '2025', '2024-04-03 06:14:17', '2024-04-03 06:14:17', NULL);
 INSERT INTO `ref_perkaderan` VALUES (15, 72, 'DAP', '2027', '2024-04-03 06:14:17', '2024-04-03 06:14:17', NULL);
-INSERT INTO `ref_perkaderan` VALUES (17, 72, NULL, NULL, '2024-04-04 15:36:03', '2024-04-05 10:39:55', '2024-04-05 10:39:55');
-INSERT INTO `ref_perkaderan` VALUES (18, 72, NULL, NULL, '2024-04-05 10:40:03', '2024-04-05 10:40:10', '2024-04-05 10:40:10');
-INSERT INTO `ref_perkaderan` VALUES (19, 72, NULL, NULL, '2024-04-05 10:40:13', '2024-04-05 10:40:22', '2024-04-05 10:40:22');
-INSERT INTO `ref_perkaderan` VALUES (20, 72, 'DAD', '2323', '2024-04-05 12:36:57', '2024-04-05 12:37:16', '2024-04-05 12:37:16');
-INSERT INTO `ref_perkaderan` VALUES (21, 72, NULL, NULL, '2024-04-05 12:38:14', '2024-04-05 12:38:23', '2024-04-05 12:38:23');
-INSERT INTO `ref_perkaderan` VALUES (22, 72, NULL, NULL, '2024-04-05 12:38:36', '2024-04-05 12:38:40', '2024-04-05 12:38:40');
-INSERT INTO `ref_perkaderan` VALUES (23, 72, NULL, NULL, '2024-04-05 12:38:44', '2024-04-05 12:38:49', '2024-04-05 12:38:49');
-INSERT INTO `ref_perkaderan` VALUES (24, 72, 'DAD', '2027', '2024-04-05 12:38:44', '2024-04-05 12:41:13', '2024-04-05 12:41:13');
 INSERT INTO `ref_perkaderan` VALUES (25, 72, 'DAD', '1232', '2024-04-05 12:49:29', '2024-04-05 12:49:29', NULL);
 INSERT INTO `ref_perkaderan` VALUES (26, 73, 'DAM', '2313', '2024-04-07 10:12:53', '2024-04-07 10:12:53', NULL);
 INSERT INTO `ref_perkaderan` VALUES (27, 74, 'DAM', '2313', '2024-04-07 10:13:03', '2024-04-07 10:13:03', NULL);
@@ -600,11 +778,8 @@ CREATE TABLE `ref_pimpinan`  (
 -- ----------------------------
 -- Records of ref_pimpinan
 -- ----------------------------
-INSERT INTO `ref_pimpinan` VALUES (1, 72, 'PIP', '2028', '2024-04-03 06:14:17', '2024-04-05 12:49:41', '2024-04-05 12:49:41');
 INSERT INTO `ref_pimpinan` VALUES (2, 72, 'PIM', '2026', '2024-04-03 06:14:17', '2024-04-03 06:14:17', NULL);
 INSERT INTO `ref_pimpinan` VALUES (3, 72, 'PIP', '2028', '2024-04-03 06:14:17', '2024-04-05 11:28:21', NULL);
-INSERT INTO `ref_pimpinan` VALUES (6, 72, NULL, NULL, '2024-04-05 12:38:14', '2024-04-05 12:38:26', '2024-04-05 12:38:26');
-INSERT INTO `ref_pimpinan` VALUES (7, 72, NULL, NULL, '2024-04-05 12:38:36', '2024-04-05 12:38:51', '2024-04-05 12:38:51');
 INSERT INTO `ref_pimpinan` VALUES (8, 72, 'PID', '1232', '2024-04-05 12:52:29', '2024-04-05 12:52:29', NULL);
 INSERT INTO `ref_pimpinan` VALUES (9, 73, 'PID', '1323123', '2024-04-07 10:12:53', '2024-04-07 10:12:53', NULL);
 INSERT INTO `ref_pimpinan` VALUES (10, 74, 'PID', '1323123', '2024-04-07 10:13:03', '2024-04-07 10:13:03', NULL);

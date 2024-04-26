@@ -141,11 +141,9 @@ $(() => {
 
 
     $(document).on('click', '.btn-verification', function() {
-        // Get the value of data-verif attribute from the clicked button
         isVerif = $(this).data('verif');
 
-        // If the value of data-verif is 0, show the reasonInput div
-        if (isVerif == 0) {
+        if (isVerif == 1) {
             $('#reasonInput').show();
         } else {
             $('#reasonInput').hide();

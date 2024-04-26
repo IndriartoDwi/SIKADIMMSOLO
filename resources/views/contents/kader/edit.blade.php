@@ -200,7 +200,7 @@
                             <select class="form-control" name="universitas" id="universitas">
                                 <option value="" selected>--- Pilih Perguruan Tinggi ---</option>
                                 @foreach ($kampus as $option)
-                                    <option value="{{$option->kampus}}" {{ $data->universitas == $option->kampus ? 'selected' : '' }}>
+                                    <option value="{{$option->id}}" {{ $data->universitas == $option->id ? 'selected' : '' }}>
                                         {{$option->kampus}}
                                     </option>
                                 @endforeach
@@ -228,7 +228,7 @@
                             <select class="form-control select2" name="prodi" id="prodi">
                                 <option value="" selected>--- Pilih Program Studi ---</option>
                                 @foreach ($prodi as $option)
-                                    <option value="{{$option->prodi}}" {{ $data->prodi == $option->prodi ? 'selected' : '' }}>
+                                    <option value="{{$option->id}}" {{ $data->prodi == $option->id ? 'selected' : '' }}>
                                         {{$option->prodi}}
                                     </option>
                                 @endforeach
@@ -705,6 +705,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label for="foto">Foto</label>
@@ -734,6 +735,71 @@
 
     <script>
         $(document).ready(function() {
+
+            // $('#universitas').trigger("change");
+
+            $('#universitas').on('change', function() {
+            // alert( this.value );
+            get_fakultas(this);
+
+            });
+
+            setTimeout(function() {
+                $('#universitas').trigger("change");
+            }, 1000);
+
+            $('#fakultas').on('change', function() {
+            // alert( this.value );
+            get_prodi(this);
+
+            });
+
+            var selectedFakultas = "{{ $data->fakultas }}";
+
+            setTimeout(function() {
+
+                $('#fakultas').val(selectedFakultas).trigger('change');
+            }, 1500);
+
+            function get_fakultas(dt){
+            var val = $(dt).val();
+            $.ajax({
+                url: BASE_URL + 'kader/get-fakultas',
+                type: 'get',
+                data: {
+                    id:val
+                },
+                dataType: 'json',
+                success: (res) => {
+                    $("#fakultas").html(res)
+                },
+            })
+            }
+
+            var selectedProdi = "{{ $data->prodi }}";
+
+            setTimeout(function() {
+
+                $('#prodi').val(selectedProdi).trigger('change');
+            }, 2000);
+
+            function get_prodi(dt){
+                var val = $(dt).val();
+                console.log(val);
+                $.ajax({
+                    url: BASE_URL + 'kader/get-prodi',
+                    type: 'get',
+                    data: {
+                        fakultas:val
+                    },
+                    dataType: 'json',
+                    success: (res) => {
+                        $("#prodi").html(res)
+                    },
+                })
+            }
+
+
             $('#fakultas').select2({
                 width: '100%',
             });

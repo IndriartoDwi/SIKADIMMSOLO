@@ -29,13 +29,45 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="alert bg-primary-bold" role="alert">
-                        <h3 class="text-center  mb-0">Beranda Sistem Informasi Kaderisasi</h3>
+                        <h3 class="text-center  mb-0">Beranda Sistem Informasi Kaderisasi {{$tahun}}
+                        </h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 align-self-center">
+                            <div class="text-lg-center mt-4 mt-lg-0">
+                                <form action="{{ route('dashboard.filter_tahun') }}" method="post" id="form-kader" autocomplete="off">
+                                    @csrf
+                                    @method('POST')
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <div class="form-group">
+                                                <select class="form-control" name="tahun" id="tahun">
+                                                    <option value="">--- Pilih Tahun ---</option>
+                                                    @foreach ($tahunPerkaderan as $tahun => $dt )
+                                                        <option value="{{$dt}}">{{$dt}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light">Data</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         @if (session('role_id') == 2)
         <div class="col-lg-12">
             <div class="card">
@@ -204,6 +236,9 @@
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
         renderer: yRenderer,
+        strictMinMax: true, // Ensure axis labels are integers
+        extraMax: 0.1, // Rounds up to the nearest integer
+        extraMin: 0.1 // Rounds down to the nearest integer
     }));
 
     var series = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -285,10 +320,13 @@
         strokeOpacity: 0.1
         })
 
-        var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
-        renderer: yRenderer
-        }));
+        renderer: yRenderer,
+        strictMinMax: true, // Ensure axis labels are integers
+        extraMax: 0.1, // Rounds up to the nearest integer
+        extraMin: 0.1 // Rounds down to the nearest integer
+    }));
 
         var series = chart.series.push(am5xy.ColumnSeries.new(root, {
         name: "Series 1",
@@ -370,10 +408,13 @@
         strokeOpacity: 0.1
         })
 
-        var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
-        renderer: yRenderer
-        }));
+        renderer: yRenderer,
+        strictMinMax: true, // Ensure axis labels are integers
+        extraMax: 0.1, // Rounds up to the nearest integer
+        extraMin: 0.1 // Rounds down to the nearest integer
+    }));
 
         var series = chart.series.push(am5xy.ColumnSeries.new(root, {
         name: "Series 1",
@@ -455,10 +496,13 @@
         strokeOpacity: 0.1
         })
 
-        var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
-        renderer: yRenderer
-        }));
+        renderer: yRenderer,
+        strictMinMax: true, // Ensure axis labels are integers
+        extraMax: 0.1, // Rounds up to the nearest integer
+        extraMin: 0.1 // Rounds down to the nearest integer
+    }));
 
         var series = chart.series.push(am5xy.ColumnSeries.new(root, {
         name: "Series 1",
@@ -540,10 +584,13 @@
         strokeOpacity: 0.1
         })
 
-        var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
-        renderer: yRenderer
-        }));
+        renderer: yRenderer,
+        strictMinMax: true, // Ensure axis labels are integers
+        extraMax: 0.1, // Rounds up to the nearest integer
+        extraMin: 0.1 // Rounds down to the nearest integer
+    }));
 
         var series = chart.series.push(am5xy.ColumnSeries.new(root, {
         name: "Series 1",
@@ -625,10 +672,13 @@
         strokeOpacity: 0.1
         })
 
-        var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
-        renderer: yRenderer
-        }));
+        renderer: yRenderer,
+        strictMinMax: true, // Ensure axis labels are integers
+        extraMax: 2, // Rounds up to the nearest integer
+        extraMin: 0.1 // Rounds down to the nearest integer
+    }));
 
         var series = chart.series.push(am5xy.ColumnSeries.new(root, {
         name: "Series 1",
@@ -710,10 +760,13 @@
         strokeOpacity: 0.1
         })
 
-        var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
         maxDeviation: 0.3,
-        renderer: yRenderer
-        }));
+        renderer: yRenderer,
+        strictMinMax: true, // Ensure axis labels are integers
+        extraMax: 2, // Rounds up to the nearest integer
+        extraMin: 0.1
+    }));
 
         var series = chart.series.push(am5xy.ColumnSeries.new(root, {
         name: "Series 1",

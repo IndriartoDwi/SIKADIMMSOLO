@@ -1,4 +1,36 @@
 let table;
+function get_fakultas(dt){
+    var val = $(dt).val();
+    $.ajax({
+        url: BASE_URL + 'kader/get-fakultas',
+        type: 'get',
+        data: {
+            id:val
+        },
+        dataType: 'json',
+        success: (res) => {
+            $("#fakultas").html(res)
+        },
+    })
+}
+
+function get_prodi(dt){
+    var val = $(dt).val();
+    console.log(val);
+    $.ajax({
+        url: BASE_URL + 'kader/get-prodi',
+        type: 'get',
+        data: {
+            fakultas:val
+        },
+        dataType: 'json',
+        success: (res) => {
+            $("#prodi").html(res)
+        },
+    })
+}
+
+
 $(() => {
     $('#fakultas').select2({
         width: '100%',

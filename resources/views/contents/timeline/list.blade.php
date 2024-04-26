@@ -177,22 +177,19 @@
                         <iframe class="mb-3" src="" style="width: 100%; height: 500px;" id="fileFrame"></iframe>
 
                         @if ($role_id == 2)
-                        <div>
-                            Apakah Agenda ini Tervalidasi ?
-                        </div>
+                            <div>
+                                Apakah Agenda ini Tervalidasi ?
+                            </div>
 
-                        <div class="mt-2">
-                            <button type="button" class="btn btn-success mr-2 btn-verification" data-verif="2">Ya</button>
-                            <button type="button" class="btn btn-danger btn-verification" data-verif="1">Tidak</button>
-                        </div>
+                            <div class="mt-2">
+                                <button type="button" class="btn btn-success mr-2 btn-verification" data-verif="2">Ya</button>
+                                <button type="button" class="btn btn-danger btn-verification" data-verif="1">Tidak</button>
+                            </div>
 
-                        <div id="reasonInput" style="display: block;">
-                            <input type="text" name="catatan" id="reason" class="form-control mt-2" placeholder="Catatan">
-                        </div>
+                            <div id="reasonInput" style="display: none;">
+                                <input type="text" name="catatan" id="reason" class="form-control mt-2" placeholder="Catatan">
+                            </div>
                         @else
-                        <div id="reasonInput" style="display: none;">
-                            <input type="text" name="catatan" id="reason" class="form-control mt-2" placeholder="Catatan">
-                        </div>
                         @endif
 
                     </div>
@@ -216,8 +213,8 @@
 @endpush
 
 <script>
-$(document).on('click', '.open-modal', function() {
-    var fileUrl = $(this).data('file-url');
-    $('#fileFrame').attr('src', fileUrl);
-});
+    $(document).on('click', '.open-modal', function() {
+        var fileUrl = $(this).data('file-url');
+        $('#fileFrame').attr('src', fileUrl);
+    });
 </script>
