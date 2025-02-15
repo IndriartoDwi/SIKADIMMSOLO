@@ -95,7 +95,7 @@ class OtoritasController extends Controller
         $role = Role::where('slug_name', $slug)->first();
 
         $actions = Action::all();
-
+        
         $menus = $this->getMenu($role->id);
 
         return view('contents.otoritas.permissions', [
@@ -154,26 +154,25 @@ class OtoritasController extends Controller
         $menus = Menu::select(DB::raw('id, parent_id, name'))
             ->where('parent_id', $parent_id)
             ->with(['permissions' => function ($query) use ($role_id) {
-                $query->select(DB::raw('menu_id, role_id, GROUP_CONCAT(action_id) as action'));
+                $query->select(DB::raw('menu_id, role_id, GROUP_CONCAT(action_id ORDER BY action_id ASC) as action'));
                 $query->where('role_id', $role_id);
                 $query->where('is_active', 1);
-                $query->groupBy('menu_id');
-                $query->groupBy('role_id');
-                $query->orderBy('action_id');
+                $query->groupBy('menu_id', 'role_id');
+                // Removed ->orderBy('action_id') because it conflicts with GROUP BY
             }])
             ->get();
 
         foreach ($menus as $menu) {
             $menu->child = $this->getMenu($role_id, $menu->id);
+            
             if (!empty($menu->permissions)) {
                 $actions = explode(',', $menu->permissions->action);
 
-                $menu->actions = array_map(function ($item) {
-                    return (int) $item;
-                }, $actions);
+                $menu->actions = array_map(fn($item) => (int) $item, $actions);
             } else {
                 $menu->actions = [];
             }
+
             unset($menu->permissions);
         }
 
