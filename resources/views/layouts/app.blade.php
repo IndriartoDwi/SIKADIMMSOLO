@@ -9,12 +9,12 @@
     <meta content="Boilerplate Laravel System" name="description" />
     <meta content="Phicosdev" name="author" />
     <meta content="{{ url('/') }}/" name="base_url" />
-    <meta content="{{ config('app.theme') }}" name="asset_url">
+    <meta content="" name="asset_url">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{--
     <meta content="{{ Route::url() }}" name="current_url"> --}}
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ config('app.theme') }}assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 
     @include('layouts.component._style')
 
@@ -38,19 +38,19 @@
                     <div class="navbar-brand-box">
                         <a href="index.html" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="{{ config('app.theme') }}assets1\images\logo\IMM.png" alt="" height="30">
+                                <img src="{{ asset('assets1\images\logo\IMM.png') }}" alt="" height="30">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ config('app.theme') }}assets1\images\logo\immLong.png" alt="" height="17">
+                                <img src="{{ asset('assets1\images\logo\immLong.png') }}" alt="" height="17">
                             </span>
                         </a>
 
                         <a href="index.html" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="{{ config('app.theme') }}assets1\images\logo\IMM.png" alt="" height="30">
+                                <img src="{{ asset('assets1\images\logo\IMM.png') }}" alt="" height="30">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ config('app.theme') }}assets1\images\logo\immLong.png" alt="" height="50">
+                                <img src="{{ asset('assets1\images\logo\immLong.png') }}" alt="" height="50">
                             </span>
                         </a>
                     </div>
